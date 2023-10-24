@@ -29,15 +29,18 @@ typedef struct pid_config_
 #define MAX_PID_CONTROLLERS 4
 
 pid_controller_t create_pid(pid_config);
-int delete_pid(pid_controller_t);
+pid_err delete_pid(pid_controller_t);
 
-int set_output_limits(pid_controller_t, float min, float max);
+pid_err set_output_limits(pid_controller_t, float min, float max);
 
-int healthy(pid_controller_t);
-int set_setpoint(pid_controller_t, float);
-int set_pid_params(pid_controller_t, pid_params);
-int set_cycle_time(pid_controller_t, pid_cycle_time_t);
+pid_err healthy(pid_controller_t);
+pid_err set_setpoint(pid_controller_t, float);
+pid_err set_pid_params(pid_controller_t, pid_params);
+pid_err set_cycle_time(pid_controller_t, pid_cycle_time_t);
+pid_err get_pid_params(pid_controller_t, pid_params *);
+pid_err get_cycle_time(pid_controller_t, pid_cycle_time_t *);
+pid_err get_setpoint(pid_controller_t, float *);
 
-float update(pid_controller_t, float input);
+pid_err update(pid_controller_t, float input, float *output);
 
 #endif // _PID_H_
