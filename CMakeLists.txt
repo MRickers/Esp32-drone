@@ -4,3 +4,5 @@ cmake_minimum_required(VERSION 3.16)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(esp32-drone)
+
+option(MPU6050_MONITOR_TEST "Enable for mpu6050 sensor monitoring test")

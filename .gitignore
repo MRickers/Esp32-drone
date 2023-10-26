@@ -1,5 +1,7 @@
 .vscode
 build/
+__pycache__
+esp32/
 
 *.lock
 sdkconfig
