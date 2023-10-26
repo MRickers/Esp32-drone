@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 
 # Include the components directory of the main application:
 #
-set(EXTRA_COMPONENT_DIRS "../components")
+set(EXTRA_COMPONENT_DIRS ../components)
 
 # Set the components to include the tests for.
 # This can be overriden from CMake cache:
@@ -12,7 +12,7 @@ set(EXTRA_COMPONENT_DIRS "../components")
 #
 
 #
-set(TEST_COMPONENTS "pid" CACHE STRING "List of components to test")
+set(TEST_COMPONENTS pid mpu6050)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(unit_tests)
