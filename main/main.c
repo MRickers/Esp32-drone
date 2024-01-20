@@ -3,6 +3,4 @@
 void app_main(void)
 {
     printf("ESP32 Drone\n");
-
-    return 0;
 }
